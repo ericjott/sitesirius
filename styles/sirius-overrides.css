@@ -576,9 +576,22 @@
   background: #090909 !important;
   color: #f5f3ef;
   height: 100dvh !important;
+  justify-content: flex-start !important;
+  max-height: 100dvh;
   min-height: 100vh;
+  min-height: 100dvh;
+  overscroll-behavior: contain;
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar-sp .w-nav-overlay {
+  height: 100dvh !important;
+  inset: 0 !important;
+  overflow-y: auto !important;
+  position: fixed !important;
 }
 
 .navbar-menu-wrap .absolute-background {
@@ -602,10 +615,11 @@
 .sirius-menu-shell {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 100dvh;
+  flex: 0 0 auto;
+  min-height: 100%;
   padding: clamp(6.5rem, 11vh, 9rem) clamp(1.5rem, 5vw, 6rem) 2rem;
   position: relative;
+  width: 100%;
   z-index: 3;
 }
 
@@ -634,7 +648,8 @@
   display: grid;
   flex: 1;
   gap: clamp(2rem, 5vw, 6rem);
-  grid-template-columns: minmax(20rem, 1.08fr) minmax(32rem, 0.92fr);
+  grid-template-columns: minmax(20rem, 0.86fr) minmax(34rem, 1.14fr);
+  min-height: 0;
   padding: clamp(1.4rem, 3vh, 2.5rem) 0;
 }
 
@@ -659,19 +674,34 @@
     padding-left 0.25s ease;
 }
 
-.sirius-menu-main-link span {
+.sirius-menu-main-link > span {
   color: #d71920;
   font-family: "Orbitron", sans-serif;
   font-size: 0.6rem;
   letter-spacing: 0.12em;
 }
 
+.sirius-menu-main-link > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
 .sirius-menu-main-link strong {
   font-family: "Inter Tight", sans-serif;
-  font-size: clamp(2rem, 4.1vw, 4.6rem);
+  font-size: clamp(1.85rem, 3.4vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.95;
+}
+
+.sirius-menu-main-link small {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: clamp(0.62rem, 0.72vw, 0.75rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  transition: color 0.25s ease;
 }
 
 .sirius-menu-main-link:hover,
@@ -681,45 +711,121 @@
   padding-left: 0.75rem;
 }
 
+.sirius-menu-main-link:hover small,
+.sirius-menu-main-link:focus-visible small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .sirius-menu-secondary {
-  align-content: center;
   border-left: 1px solid rgba(255, 255, 255, 0.14);
-  display: grid;
-  gap: clamp(1.6rem, 3vw, 3rem);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 2vh, 1.8rem);
+  justify-content: center;
   padding-left: clamp(2rem, 4vw, 5rem);
 }
 
-.sirius-menu-group {
-  align-self: start;
+.sirius-menu-directory-head {
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
-  flex-direction: column;
-  gap: 0.58rem;
+  justify-content: space-between;
+  padding-bottom: 0.9rem;
 }
 
-.sirius-menu-group p {
+.sirius-menu-directory-head > span,
+.sirius-menu-directory-title > span {
   color: #d71920;
   font-family: "Orbitron", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   letter-spacing: 0.17em;
-  margin: 0 0 0.4rem;
   text-transform: uppercase;
 }
 
-.sirius-menu-group a {
-  color: rgba(255, 255, 255, 0.68);
-  font-size: clamp(0.9rem, 1vw, 1.05rem);
-  line-height: 1.25;
-  text-decoration: none;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+.sirius-menu-directory-head p {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 17rem;
+  text-align: right;
 }
 
-.sirius-menu-group a:hover,
-.sirius-menu-group a:focus-visible {
+.sirius-menu-directory {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sirius-menu-directory-group {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sirius-menu-directory-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.8rem;
+}
+
+.sirius-menu-directory-title > small {
+  color: rgba(255, 255, 255, 0.28);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+}
+
+.sirius-menu-card {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.78);
+  display: grid;
+  grid-template-areas:
+    "tag arrow"
+    "name arrow";
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0.78rem 0;
+  text-decoration: none;
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    padding 0.22s ease;
+}
+
+.sirius-menu-card > span {
+  color: rgba(255, 255, 255, 0.32);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.5rem;
+  grid-area: tag;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+
+.sirius-menu-card > strong {
+  font-size: clamp(0.93rem, 1.08vw, 1.15rem);
+  font-weight: 400;
+  grid-area: name;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-top: 0.28rem;
+}
+
+.sirius-menu-card > b {
+  align-self: center;
+  color: #d71920;
+  font-size: 0.95rem;
+  font-weight: 400;
+  grid-area: arrow;
+  margin-left: 0.9rem;
+}
+
+.sirius-menu-card:hover,
+.sirius-menu-card:focus-visible {
+  background: rgba(215, 25, 32, 0.09);
+  border-color: rgba(215, 25, 32, 0.7);
   color: #fff;
-  transform: translateX(0.35rem);
+  padding-left: 0.65rem;
+  padding-right: 0.45rem;
 }
 
 .sirius-menu-footer {
@@ -731,6 +837,12 @@
 
 .sirius-menu-footer p {
   margin: 0;
+}
+
+.sirius-menu-footer-actions {
+  align-items: center;
+  display: flex;
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 .sirius-menu-footer a {
@@ -750,7 +862,78 @@
   font-size: 1rem;
 }
 
-@media screen and (max-width: 991px) {
+.sirius-menu-footer .sirius-menu-association {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.sirius-menu-contact {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: clamp(1rem, 2vw, 2rem);
+}
+
+.sirius-menu-footer a:hover,
+.sirius-menu-footer a:focus-visible {
+  color: #d71920;
+}
+
+@media screen and (min-width: 1181px) and (max-height: 850px) {
+  .sirius-menu-shell {
+    padding-bottom: 1.2rem;
+    padding-top: clamp(5.3rem, 10vh, 6.4rem);
+  }
+
+  .sirius-menu-grid {
+    padding: 0.85rem 0;
+  }
+
+  .sirius-menu-main-link {
+    padding-bottom: 0.48rem;
+    padding-top: 0.48rem;
+  }
+
+  .sirius-menu-main-link strong {
+    font-size: clamp(1.75rem, 3vw, 3.25rem);
+  }
+
+  .sirius-menu-secondary {
+    gap: 0.8rem;
+  }
+
+  .sirius-menu-directory-head {
+    padding-bottom: 0.6rem;
+  }
+
+  .sirius-menu-directory-title {
+    min-height: 2.25rem;
+  }
+
+  .sirius-menu-card {
+    padding-bottom: 0.52rem;
+    padding-top: 0.52rem;
+  }
+
+  .sirius-menu-footer {
+    padding-top: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 1181px) and (max-height: 700px) {
+  .sirius-menu-main-link small,
+  .sirius-menu-directory-head p {
+    display: none;
+  }
+
+  .sirius-menu-main-link > div {
+    gap: 0;
+  }
+
+  .sirius-menu-card {
+    padding-bottom: 0.42rem;
+    padding-top: 0.42rem;
+  }
+}
+
+@media screen and (max-width: 1180px) {
   .sirius-menu-shell {
     height: auto;
   }
@@ -788,12 +971,25 @@
     font-size: clamp(1.85rem, 10vw, 2.8rem);
   }
 
-  .sirius-menu-secondary {
-    gap: 2rem 1.25rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .sirius-menu-directory-head p {
+    display: none;
+  }
+
+  .sirius-menu-directory {
+    gap: 1.6rem;
+    grid-template-columns: 1fr;
   }
 
   .sirius-menu-footer {
-    justify-content: flex-end;
+    justify-content: stretch;
+  }
+
+  .sirius-menu-footer-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .sirius-menu-footer a {
+    font-size: 0.56rem;
   }
 }
