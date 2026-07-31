@@ -3,18 +3,27 @@
 .brand-wordmark {
   --brand-accent: #d71920;
   align-items: center;
-  background: linear-gradient(105deg, #ffffff 0%, #f2f2f2 34%, #171717 55%, #d71920 78%, #ffffff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #222222;
   display: inline-flex;
   font-family: "Orbitron", "Eurostile", "Bank Gothic", "Inter Tight", sans-serif;
-  font-size: clamp(.82rem, .95vw, 1.12rem);
+  font-size: clamp(0.82rem, 0.95vw, 1.12rem);
   font-weight: 600;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.brand-wordmark .brand-sirius {
+  color: #222222;
+}
+
+.brand-wordmark .brand-dynamics {
+  color: #353535;
+}
+
+.brand-wordmark .brand-technology {
+  color: var(--brand-accent);
 }
 
 .brand-wordmark::before {
@@ -29,6 +38,138 @@
   max-width: calc(100vw - 96px);
 }
 
+.navbar-menu-button {
+  align-items: center;
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  overflow: visible;
+  padding: 0 !important;
+  position: relative;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+  width: 44px;
+}
+
+.navbar-menu-button::after {
+  display: none;
+}
+
+.navbar-menu-button:hover,
+.navbar-menu-button:focus-visible {
+  background: transparent !important;
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.navbar-menu-button .menu-image-wrap {
+  align-items: center;
+  display: flex !important;
+  height: 24px;
+  justify-content: center;
+  inset: 0 !important;
+  margin: 0 !important;
+  overflow: visible;
+  position: absolute !important;
+  width: 24px;
+}
+
+.navbar-menu-button .menu-image {
+  filter: brightness(0) invert(1);
+  height: 24px !important;
+  inset: 0 !important;
+  margin: auto !important;
+  position: absolute !important;
+  transform: none !important;
+  width: 24px !important;
+}
+
+.navbar-menu-button .menu-image.show {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.navbar-menu-button .menu-image.close {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.navbar-menu-button .menu-image-wrap::before,
+.navbar-menu-button .menu-image-wrap::after {
+  display: none;
+}
+
+.navbar-menu-button .menu-bar {
+  background: #242424;
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  transition:
+    opacity 0.25s ease,
+    top 0.25s ease,
+    transform 0.25s ease;
+  width: 24px;
+}
+
+.navbar-menu-button .menu-bar-1 {
+  top: 4px;
+}
+
+.navbar-menu-button .menu-bar-2 {
+  top: 11px;
+}
+
+.navbar-menu-button .menu-bar-3 {
+  top: 18px;
+}
+
+.navbar-menu-button.w--open {
+  background: transparent !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.navbar-menu-button.w--open .menu-image.show {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.navbar-menu-button.w--open .menu-image.close {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.navbar-menu-button.w--open .menu-bar-1 {
+  background: #fff;
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+.navbar-menu-button.w--open .menu-bar-2 {
+  background: #fff;
+  opacity: 0;
+}
+
+.navbar-menu-button.w--open .menu-bar-3 {
+  background: #fff;
+  top: 11px;
+  transform: rotate(-45deg);
+}
+
 .wrapper-logo-footer {
   text-decoration: none;
 }
@@ -38,10 +179,75 @@
   text-align: center;
 }
 
+.sirius-institutional-links {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2.5rem 0 0;
+}
+
+.sirius-association-link {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f5f3ef;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(7rem, 0.55fr) minmax(11rem, 1.45fr) auto;
+  padding: 1.15rem 1.3rem;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.sirius-association-link:hover,
+.sirius-association-link:focus-visible {
+  background: rgba(215, 25, 32, 0.09);
+  border-color: rgba(215, 25, 32, 0.68);
+  transform: translateY(-2px);
+}
+
+.sirius-association-link span {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sirius-association-link strong {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.74rem, 1vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sirius-association-link b {
+  color: #d71920;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .sirius-institutional-links {
+    grid-template-columns: 1fr;
+  }
+
+  .sirius-association-link {
+    grid-template-columns: 1fr auto;
+  }
+
+  .sirius-association-link span {
+    grid-column: 1 / -1;
+  }
+}
+
 .text-main-hero {
   max-width: 92vw;
   font-size: clamp(5.5rem, 14vw, 16rem);
-  line-height: .8;
+  line-height: 0.8;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -110,7 +316,7 @@
 }
 
 .wrapper-content-service._4 .text-description-service._4 {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, .75);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
 }
 
 .section.contact {
@@ -154,7 +360,7 @@
 }
 
 .text-tittle-client {
-  font-size: clamp(.92rem, 1vw, 1.2rem);
+  font-size: clamp(0.92rem, 1vw, 1.2rem);
   line-height: 1.25;
 }
 
@@ -165,8 +371,11 @@
 
 .legal-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(215, 25, 32, .38), transparent 34rem),
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(215, 25, 32, 0.38),
+      transparent 34rem
+    ),
     linear-gradient(180deg, #050505 0%, #101010 48%, #050505 100%);
   color: #f5f5f5;
   font-family: "Inter Tight", Arial, sans-serif;
@@ -188,7 +397,7 @@
 
 .legal-back {
   color: #fff;
-  font-size: .95rem;
+  font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
 }
@@ -205,9 +414,9 @@
 
 .legal-kicker {
   color: #ff4b50;
-  font-size: .78rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
   margin: 0 0 16px;
   text-transform: uppercase;
 }
@@ -217,12 +426,12 @@
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 600;
   letter-spacing: 0;
-  line-height: .9;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
 .legal-updated {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   margin: 22px 0 0;
 }
@@ -235,7 +444,7 @@
 }
 
 .legal-section {
-  border-top: 1px solid rgba(255, 255, 255, .16);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   padding-top: 26px;
 }
 
@@ -249,7 +458,7 @@
 
 .legal-section p,
 .legal-section li {
-  color: rgba(255, 255, 255, .78);
+  color: rgba(255, 255, 255, 0.78);
   font-size: clamp(1rem, 1.2vw, 1.12rem);
   line-height: 1.7;
 }
@@ -266,11 +475,11 @@
 .legal-section a {
   color: #fff;
   text-decoration-color: #ff4b50;
-  text-underline-offset: .22em;
+  text-underline-offset: 0.22em;
 }
 
 .legal-footer {
-  border-top: 1px solid rgba(255, 255, 255, .16);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   display: flex;
   flex-wrap: wrap;
   gap: 16px 28px;
@@ -281,8 +490,8 @@
 
 .legal-footer a,
 .legal-footer span {
-  color: rgba(255, 255, 255, .72);
-  font-size: .95rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
@@ -293,8 +502,8 @@
 
 @media screen and (max-width: 767px) {
   .brand-wordmark {
-    font-size: .72rem;
-    letter-spacing: .075em;
+    font-size: 0.72rem;
+    letter-spacing: 0.075em;
     max-width: 70vw;
     white-space: normal;
   }
@@ -306,7 +515,7 @@
   .text-main-hero {
     max-width: 92vw;
     font-size: clamp(4rem, 20vw, 7rem);
-    line-height: .82;
+    line-height: 0.82;
   }
 
   .wrapper-images-decorative._1,
@@ -360,5 +569,231 @@
     flex-direction: column;
     padding-bottom: 44px;
   }
+}
 
+/* Institutional navigation */
+.navbar-menu-wrap {
+  background: #090909 !important;
+  color: #f5f3ef;
+  height: 100dvh !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.navbar-menu-wrap .absolute-background {
+  background: radial-gradient(
+      circle at 84% 8%,
+      rgba(215, 25, 32, 0.24),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025) 0 1px,
+      transparent 1px 48px
+    ),
+    #090909 !important;
+  background-size:
+    auto,
+    48px 48px,
+    auto;
+}
+
+.sirius-menu-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100dvh;
+  padding: clamp(6.5rem, 11vh, 9rem) clamp(1.5rem, 5vw, 6rem) 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.sirius-menu-topline,
+.sirius-menu-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sirius-menu-topline {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.sirius-menu-index {
+  color: #d71920;
+}
+
+.sirius-menu-grid {
+  display: grid;
+  flex: 1;
+  gap: clamp(2rem, 5vw, 6rem);
+  grid-template-columns: minmax(20rem, 1.08fr) minmax(32rem, 0.92fr);
+  padding: clamp(1.4rem, 3vh, 2.5rem) 0;
+}
+
+.sirius-menu-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sirius-menu-main-link {
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  color: #f5f3ef;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: 2rem 1fr;
+  padding: clamp(0.55rem, 1.2vh, 1rem) 0;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.sirius-menu-main-link span {
+  color: #d71920;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+.sirius-menu-main-link strong {
+  font-family: "Inter Tight", sans-serif;
+  font-size: clamp(2rem, 4.1vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.sirius-menu-main-link:hover,
+.sirius-menu-main-link:focus-visible {
+  border-color: #d71920;
+  color: #d71920;
+  padding-left: 0.75rem;
+}
+
+.sirius-menu-secondary {
+  align-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  gap: clamp(1.6rem, 3vw, 3rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: clamp(2rem, 4vw, 5rem);
+}
+
+.sirius-menu-group {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
+}
+
+.sirius-menu-group p {
+  color: #d71920;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.17em;
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.sirius-menu-group a {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sirius-menu-group a:hover,
+.sirius-menu-group a:focus-visible {
+  color: #fff;
+  transform: translateX(0.35rem);
+}
+
+.sirius-menu-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.75rem;
+  padding-top: 1.1rem;
+}
+
+.sirius-menu-footer p {
+  margin: 0;
+}
+
+.sirius-menu-footer a {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.68rem;
+  gap: 0.8rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.sirius-menu-footer a span {
+  color: #d71920;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .sirius-menu-shell {
+    height: auto;
+  }
+
+  .sirius-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sirius-menu-secondary {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 2rem 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sirius-menu-shell {
+    padding: 6rem 1.15rem 1.5rem;
+  }
+
+  .sirius-menu-kicker,
+  .sirius-menu-footer p {
+    display: none;
+  }
+
+  .sirius-menu-topline {
+    justify-content: flex-end;
+  }
+
+  .sirius-menu-grid {
+    gap: 2rem;
+  }
+
+  .sirius-menu-main-link strong {
+    font-size: clamp(1.85rem, 10vw, 2.8rem);
+  }
+
+  .sirius-menu-secondary {
+    gap: 2rem 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sirius-menu-footer {
+    justify-content: flex-end;
+  }
 }
