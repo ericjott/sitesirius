@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/about-us",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/projeto-mecanico-3d.html",
+      "destination": "/desenvolvimento-prototipos.html",
+      "permanent": true
+    }
+  ]
+}

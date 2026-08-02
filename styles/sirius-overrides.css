@@ -249,6 +249,7 @@
   font-size: clamp(5.5rem, 14vw, 16rem);
   line-height: 0.8;
   letter-spacing: 0;
+  margin: 0;
   text-transform: uppercase;
 }
 
