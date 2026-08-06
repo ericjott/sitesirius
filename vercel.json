@@ -2,8 +2,63 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/about-us",
       "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/solucoes.html",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/projetos.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/documentacao.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacidade.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/termos-de-uso.html",
+      "permanent": true
+    },
+    {
+      "source": "/blank-2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/robotica-medica",
+      "destination": "/visus-medical-suite.html",
+      "permanent": true
+    },
+    {
+      "source": "/servi%C3%A7osdigitais",
+      "destination": "/solucoes.html",
+      "permanent": true
+    },
+    {
+      "source": "/serviçosdigitais",
+      "destination": "/solucoes.html",
       "permanent": true
     },
     {
