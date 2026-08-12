@@ -794,6 +794,68 @@ img { display: block; max-width: 100%; }
   .medical-ecosystem-actions a { width:100%; }
 }
 
+/* UAV Designer Pro — refined product presentation */
+.uav-designer-page { background:#07090b; }
+.uav-designer-page .uav-designer-header { backdrop-filter:blur(18px); background:rgba(7,9,11,.74); padding-left:clamp(1.5rem,5vw,5.5rem); padding-right:clamp(1.5rem,5vw,5.5rem); position:fixed; }
+.uav-designer-page .uav-designer-header nav { gap:clamp(1.2rem,2.7vw,3.2rem); }
+.uav-designer-page .uav-designer-header nav a { color:rgba(255,255,255,.58); transition:color .2s; }
+.uav-designer-page .uav-designer-header nav a:hover { color:#fff; }
+.uav-designer-page .uav-designer-hero { background:radial-gradient(circle at 75% 12%,rgba(146,20,30,.23),transparent 31rem),linear-gradient(180deg,#090b0d 0%,#07090b 100%); display:block; min-height:auto; overflow:hidden; padding:clamp(10rem,14vw,13.5rem) clamp(1.5rem,6.4vw,7.5rem) 0; }
+.uav-designer-page .uav-designer-grid { background-size:56px 56px; mask-image:linear-gradient(180deg,#000 0%,transparent 72%); opacity:.48; }
+.uav-designer-page .uav-designer-copy { max-width:86rem; padding:0; }
+.uav-designer-page .uav-designer-copy h1 { font-size:clamp(3.8rem,7.8vw,9.1rem); letter-spacing:-.07em; line-height:.88; margin:1.7rem 0 2.2rem; max-width:84rem; }
+.uav-designer-page .uav-designer-copy h1 em { color:rgba(255,255,255,.34); -webkit-text-stroke:0; }
+.uav-designer-page .uav-designer-lead { font-size:clamp(1.45rem,2.2vw,2.3rem)!important; letter-spacing:-.02em; }
+.uav-designer-page .uav-designer-copy>p:not(.uav-designer-lead) { font-size:1.02rem; max-width:49rem; }
+.uav-designer-page .uav-actions { margin-top:2.5rem; }
+.uav-designer-page .uav-cta { background:#d4212d; border:1px solid #d4212d; gap:3.5rem; padding:1.15rem 1.35rem; }
+.uav-designer-page .uav-link { border:1px solid rgba(255,255,255,.2); padding:1.15rem 1.35rem; }
+.uav-product-stage { background:#101317; border:1px solid rgba(255,255,255,.16); box-shadow:0 3rem 8rem rgba(0,0,0,.55); margin-top:clamp(5rem,8vw,8rem); padding:.65rem; position:relative; }
+.uav-product-stage:before { background:radial-gradient(circle,rgba(212,33,45,.22),transparent 65%); content:""; filter:blur(30px); inset:-5rem 12%; pointer-events:none; position:absolute; z-index:-1; }
+.uav-product-top { align-items:center; color:rgba(255,255,255,.42); display:grid; font-family:"Orbitron",sans-serif; font-size:.54rem; grid-template-columns:1fr auto 1fr; letter-spacing:.12em; min-height:2.75rem; padding:0 .8rem; }
+.uav-product-top>span { display:flex; gap:.38rem; }
+.uav-product-top i { background:#3b4147; border-radius:50%; display:block; height:.42rem; width:.42rem; }
+.uav-product-top i:first-child { background:#d4212d; }
+.uav-product-top strong { color:rgba(255,255,255,.72); font-weight:500; }
+.uav-product-top small { justify-self:end; }
+.uav-designer-page .uav-designer-visual { margin:0; }
+.uav-designer-page .uav-designer-visual:before { display:none; }
+.uav-designer-page .uav-designer-visual img { aspect-ratio:1.6/1; object-fit:cover; object-position:top center; }
+.uav-designer-page .uav-designer-visual figcaption { background:#0b0e11; padding:1rem; }
+.uav-proofbar { border-left:1px solid rgba(255,255,255,.13); display:grid; grid-template-columns:repeat(4,1fr); margin-top:4.5rem; position:relative; }
+.uav-proofbar>div { border-right:1px solid rgba(255,255,255,.13); padding:0 2rem 3rem; }
+.uav-proofbar strong { display:block; font-size:clamp(2rem,3.5vw,4rem); font-weight:300; letter-spacing:-.05em; }
+.uav-proofbar span { color:rgba(255,255,255,.4); font-size:.63rem; letter-spacing:.12em; text-transform:uppercase; }
+.uav-designer-page .uav-designer-manifest { background:#f0f0ed; padding-bottom:clamp(7rem,11vw,12rem); padding-top:clamp(7rem,11vw,12rem); }
+.uav-designer-page .uav-designer-manifest h2 { font-size:clamp(3rem,5.6vw,6.7rem); }
+.uav-designer-page .uav-capabilities { background:#0a0d10; }
+.uav-designer-page .uav-capability-grid { gap:1px; background:rgba(255,255,255,.11); border:0; }
+.uav-designer-page .uav-capability-grid article { background:#101419; border:0; min-height:20rem; transition:background .25s,transform .25s; }
+.uav-designer-page .uav-capability-grid article:hover { background:#151a20; transform:translateY(-3px); }
+.uav-designer-page .uav-capability-grid h3 { margin-top:5rem; }
+.uav-designer-page .uav-workflow { background:#d4212d; }
+.uav-designer-page .uav-technical { background:radial-gradient(circle at 82% 40%,rgba(212,33,45,.2),transparent 25rem),#0a0d10; min-height:42rem; }
+.uav-designer-page .uav-footer { background:#040506; }
+@media (max-width:900px) {
+  .uav-designer-page .uav-designer-hero { padding-top:9rem; }
+  .uav-proofbar { grid-template-columns:repeat(2,1fr); row-gap:2.5rem; }
+  .uav-product-top { grid-template-columns:1fr auto; }
+  .uav-product-top small { display:none; }
+}
+@media (max-width:600px) {
+  .uav-designer-page .uav-designer-hero { padding-left:1.15rem; padding-right:1.15rem; }
+  .uav-designer-page .uav-designer-copy { min-width:0; width:100%; }
+  .uav-designer-page .uav-designer-copy>* { box-sizing:border-box; max-width:100%; overflow-wrap:anywhere; }
+  .uav-designer-page .uav-designer-copy h1 { font-size:clamp(3.3rem,16vw,5rem); }
+  .uav-designer-page .uav-designer-lead { font-size:1.35rem!important; }
+  .uav-designer-page .uav-actions { align-items:stretch; flex-direction:column; }
+  .uav-designer-page .uav-actions a { justify-content:space-between; width:100%; }
+  .uav-product-stage { margin-left:-.35rem; margin-right:-.35rem; padding:.35rem; }
+  .uav-product-top strong { font-size:.48rem; }
+  .uav-proofbar>div { padding:0 1rem 2rem; }
+  .uav-designer-page .uav-designer-visual img { aspect-ratio:1.15/1; }
+}
+
 /* UAV Designer Pro */
 .uav-designer-page { --uav-red:#cf2029; --uav-ink:#090c0f; --uav-panel:#10151a; background:var(--uav-ink); color:#f4f5f5; overflow-x:hidden; }
 .uav-designer-header { background:rgba(7,10,13,.9); border-bottom:1px solid rgba(255,255,255,.12); position:absolute; width:100%; z-index:5; }
