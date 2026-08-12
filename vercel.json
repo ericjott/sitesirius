@@ -1,5 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/uav-designer",
+      "destination": "/uav-designer/index.html"
+    },
+    {
+      "source": "/uav-designer/",
+      "destination": "/uav-designer/index.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/index.html",

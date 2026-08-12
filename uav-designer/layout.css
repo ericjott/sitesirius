@@ -1,0 +1,108 @@
+/* Layout de alta densidade para leitura técnica. Carregado por último para
+   manter os componentes existentes e ajustar apenas ritmo, alinhamento e fluxo. */
+main{max-width:1480px}
+.hero{min-height:370px}
+.panel{padding-top:36px}
+.section-head{margin-bottom:26px}
+.section-head h2,.result-hero h2{font-size:clamp(32px,3vw,42px)}
+.form-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.field{padding:15px 16px}
+.field label{margin-bottom:7px}
+.field input,.field select{padding:8px 0;font-size:15px}
+.action-row{margin-top:18px}
+.result-hero{padding:26px 28px}
+.metric-grid{margin-bottom:20px}
+.metric{padding:18px 20px}
+.metric strong{font-size:26px}
+.split{gap:14px;margin-bottom:14px;align-items:start}
+.visual-split{grid-template-columns:minmax(390px,.82fr) minmax(0,1.18fr);align-items:start}
+article{padding:20px}
+article>h3:first-child{margin-top:0;margin-bottom:15px}
+.sketch{min-height:0}
+.sketch canvas{max-height:440px}
+.visual-legend{gap:16px;margin-top:9px}
+.chart-grid{gap:14px;margin-bottom:14px}
+.chart-grid article{padding:20px;min-height:390px}
+
+/* Rótulos e valores permanecem próximos e previsíveis em todos os painéis. */
+.kv{grid-template-columns:minmax(155px,52%) minmax(0,1fr);gap:12px;padding:7px 0;align-items:start}
+.kv span{font-size:13px;line-height:1.28}
+.kv b{font-size:13.5px;line-height:1.3}
+#configTable .kv{grid-template-columns:minmax(165px,54%) minmax(0,1fr)}
+#performanceTable .kv,#electricalTable .kv,#airfoilTable .kv{grid-template-columns:minmax(170px,51%) minmax(0,1fr)}
+#performanceTable{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+#performanceTable .kv{grid-template-columns:minmax(135px,59%) minmax(0,1fr)}
+
+/* Em painéis largos, os dados deixam de atravessar a página inteira. */
+#remoteSensingTable{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
+#remoteSensingTable .kv{grid-template-columns:minmax(150px,58%) minmax(0,1fr)}
+#remoteSensingTable .kv:last-child{grid-column:1/-1;grid-template-columns:210px minmax(0,1fr);padding-top:12px}
+
+.summary-strip{margin-bottom:16px}
+.summary-strip div{padding:16px 18px}
+.summary-strip strong{font-size:22px}
+.gate,.warning{padding:11px 10px}
+.risk-grid,.assurance-grid,.catalog-grid{gap:10px}
+.risk,.assurance,.catalog-card{padding:17px}
+.table-wrap th,.table-wrap td{padding:11px 12px}
+.catalog-stats{margin-bottom:14px}
+.catalog-stats div{padding:15px 17px}
+.catalog-toolbar{margin-bottom:14px}
+
+/* BOM: resumo executivo, filtros e tabela agrupada para leitura técnica. */
+.bom-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px}
+.bom-summary div{background:linear-gradient(135deg,#14171a,#0e1012);padding:18px 20px;min-width:0}
+.bom-summary strong{display:block;font-size:27px;font-weight:400;line-height:1}
+.bom-summary span,.bom-toolbar label>span,.bom-count span{display:block;color:#737b81;font-size:9px;letter-spacing:.12em;margin-top:8px}
+.bom-toolbar{display:grid;grid-template-columns:minmax(280px,1fr) minmax(220px,320px) 120px;gap:10px;align-items:end;margin-bottom:14px}
+.bom-toolbar label{display:block}
+.bom-toolbar label>span{margin:0 0 7px}
+.bom-toolbar input,.bom-toolbar select{width:100%;height:43px;background:#101215;border:1px solid var(--line);color:#e8eaeb;padding:0 13px;outline:none}
+.bom-toolbar input:focus,.bom-toolbar select:focus{border-color:#7f252b;box-shadow:0 0 0 2px rgba(197,22,32,.09)}
+.bom-toolbar input:disabled,.bom-toolbar select:disabled{opacity:.4}
+.bom-count{height:43px;border-left:1px solid var(--line);padding-left:18px;display:flex;flex-direction:column;justify-content:center}
+.bom-count strong{font-size:18px;font-weight:500;line-height:1}
+.bom-count span{margin-top:4px}
+.bom-table-wrap{max-height:68vh;background:#0c0e10}
+.bom-table{table-layout:fixed;min-width:1040px}
+.bom-table thead{position:sticky;top:0;z-index:3}
+.bom-table th{background:#1b1e22;border-bottom:1px solid #34393e}
+.bom-col-system{width:15%}.bom-col-item{width:22%}.bom-col-qty{width:7%}.bom-col-spec{width:29%}.bom-col-reason{width:27%}
+.bom-table td{font-size:12.5px;line-height:1.45;background:#0f1113}
+.bom-table tbody tr:not(.bom-group):hover td{background:#15181b}
+.bom-table td:nth-child(4),.bom-table td:nth-child(5){color:#9da4a9}
+.bom-group td{position:sticky;top:37px;z-index:2;padding:9px 12px;background:#191c20;border-top:1px solid #3a3f44;border-bottom:1px solid #292d31}
+.bom-group span{color:#f0f1f2;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.bom-group small{display:inline;margin:0 0 0 10px;color:#687077;font-size:9px}
+.bom-group+.bom-group td{border-top:0}
+.bom-table .system-pill{color:#b7bdc1}
+.bom-table .part-id{font-family:Consolas,monospace;font-size:9.5px;color:#697177;overflow-wrap:anywhere}
+.bom-table .part-id.pending{color:#886f43}
+.qty-badge{display:inline-flex;min-width:34px;height:28px;align-items:center;justify-content:center;background:#251417;border:1px solid #562027;color:#f2a5aa;font-size:13px;font-weight:600}
+.bom-empty{text-align:center!important;padding:58px 20px!important;background:#0f1113!important}
+.bom-empty strong,.bom-empty span{display:block}.bom-empty strong{font-size:17px;font-weight:500;color:#d8dbdd}.bom-empty span{color:#727a80;margin-top:8px}
+
+@media(max-width:1300px){
+  .form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #remoteSensingTable{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1000px){
+  .hero{min-height:340px}
+  .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .visual-split{grid-template-columns:1fr}
+  .sketch canvas{max-height:none}
+  #remoteSensingTable{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bom-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bom-toolbar{grid-template-columns:1fr 1fr}.bom-count{display:none}
+}
+@media(max-width:700px){
+  .panel{padding-top:28px}
+  .section-head{margin-bottom:20px}
+  .form-grid,#remoteSensingTable,#performanceTable{grid-template-columns:1fr}
+  article{padding:16px}
+  .kv,#configTable .kv,#performanceTable .kv,#electricalTable .kv,#airfoilTable .kv,#remoteSensingTable .kv,#remoteSensingTable .kv:last-child{grid-template-columns:minmax(135px,52%) minmax(0,1fr);grid-column:auto;gap:9px}
+  .chart-grid article{min-height:0;padding:14px}
+  .bom-summary{grid-template-columns:1fr 1fr}.bom-summary div{padding:15px}
+  .bom-summary strong{font-size:22px}.bom-toolbar{grid-template-columns:1fr}
+  .bom-table-wrap{max-height:none}
+}

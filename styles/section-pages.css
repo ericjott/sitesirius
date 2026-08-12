@@ -121,6 +121,10 @@ img { display: block; max-width: 100%; }
 .system-feature-medical .system-image img { object-position:center 45%; }
 .system-feature-documents { margin-top:clamp(6rem,12vw,12rem); }
 .system-feature-documents .system-image img { object-position:center; }
+.system-feature-designer { margin-top:clamp(6rem,12vw,12rem); }
+.system-feature-designer .system-image { order:2; background:#090d12; }
+.system-feature-designer .system-copy { order:1; }
+.system-feature-designer .system-image img { object-fit:contain; padding:clamp(1rem,2vw,2rem); }
 
 .product-page { background:#090909; overflow:hidden; }
 .product-header { align-items:center; display:flex; justify-content:space-between; padding:1.5rem clamp(1.25rem,5vw,6rem); position:absolute; width:100%; z-index:3; }
@@ -265,7 +269,7 @@ img { display: block; max-width: 100%; }
   .medical-hero { padding-top:8rem; }
   .medical-hero-image { justify-self:center; max-width:24rem; order:-1; }
   .workflow-steps { grid-template-columns:repeat(2,1fr); }
-  .system-feature-medical .system-image,.system-feature-medical .system-copy { order:initial; }
+  .system-feature-medical .system-image,.system-feature-medical .system-copy,.system-feature-designer .system-image,.system-feature-designer .system-copy { order:initial; }
 }
 @media (max-width:600px) {
   .workflow-steps,.medical-benefit-grid { grid-template-columns:1fr; }
@@ -788,6 +792,69 @@ img { display: block; max-width: 100%; }
   .nexus-value-grid { grid-template-columns:1fr; }
   .nexus-project-legal,.projects-status { gap:1rem; flex-direction:column; }
   .medical-ecosystem-actions a { width:100%; }
+}
+
+/* UAV Designer Pro */
+.uav-designer-page { --uav-red:#cf2029; --uav-ink:#090c0f; --uav-panel:#10151a; background:var(--uav-ink); color:#f4f5f5; overflow-x:hidden; }
+.uav-designer-header { background:rgba(7,10,13,.9); border-bottom:1px solid rgba(255,255,255,.12); position:absolute; width:100%; z-index:5; }
+.uav-designer-hero { background:radial-gradient(circle at 75% 35%,rgba(207,32,41,.18),transparent 30rem),#090c0f; display:grid; grid-template-columns:minmax(24rem,.8fr) minmax(30rem,1.2fr); min-height:100vh; padding-top:5rem; position:relative; }
+.uav-designer-grid { background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:42px 42px; inset:0; mask-image:linear-gradient(90deg,#000,transparent 70%); pointer-events:none; position:absolute; }
+.uav-designer-copy { align-self:center; padding:clamp(7rem,11vw,12rem) clamp(2rem,6vw,7rem); position:relative; z-index:1; }
+.uav-kicker { color:var(--uav-red); font-family:"Orbitron",sans-serif; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; }
+.uav-designer-copy h1 { font-size:clamp(4rem,7vw,8.4rem); font-weight:300; letter-spacing:-.065em; line-height:.79; margin:1.5rem 0 2.5rem; }
+.uav-designer-copy h1 em { color:transparent; font-style:normal; -webkit-text-stroke:1px rgba(255,255,255,.68); }
+.uav-designer-lead { color:#fff!important; font-size:clamp(1.35rem,2.2vw,2.25rem)!important; font-weight:300; margin-bottom:1rem!important; }
+.uav-designer-copy>p { color:rgba(255,255,255,.58); line-height:1.75; max-width:42rem; }
+.uav-designer-copy>small { color:rgba(255,255,255,.38); display:block; line-height:1.5; margin-top:1.5rem; max-width:38rem; }
+.uav-actions { align-items:center; display:flex; flex-wrap:wrap; gap:1.6rem; margin-top:2.2rem; }
+.uav-cta { align-items:center; background:var(--uav-red); color:#fff; display:inline-flex; font-size:.74rem; font-weight:700; gap:2.5rem; letter-spacing:.08em; padding:1rem 1.2rem; text-transform:uppercase; transition:background .25s,transform .25s; }
+.uav-cta:hover { background:#ef2934; transform:translateY(-2px); }
+.uav-link { border-bottom:1px solid rgba(255,255,255,.42); color:#fff; font-size:.74rem; letter-spacing:.08em; padding:.7rem 0; text-transform:uppercase; }
+.uav-designer-visual { align-self:center; margin:clamp(6rem,9vw,9rem) clamp(2rem,5vw,6rem) 4rem 0; min-width:0; position:relative; }
+.uav-designer-visual:before { border:1px solid rgba(255,255,255,.12); content:""; inset:-1rem; position:absolute; }
+.uav-designer-visual img { display:block; position:relative; width:100%; }
+.uav-designer-visual figcaption { color:rgba(255,255,255,.4); display:flex; font-family:"Orbitron",sans-serif; font-size:.55rem; justify-content:space-between; letter-spacing:.1em; padding-top:1.2rem; }
+.uav-section { padding:clamp(6rem,10vw,11rem) clamp(1.5rem,7vw,8rem); }
+.uav-designer-manifest { align-items:start; background:#ececea; color:#101315; display:grid; gap:clamp(3rem,10vw,12rem); grid-template-columns:1.1fr .9fr; }
+.uav-designer-manifest h2,.uav-section-head h2,.uav-workflow h2,.uav-technical h2,.uav-footer h2 { font-size:clamp(2.8rem,5vw,6.2rem); font-weight:300; letter-spacing:-.055em; line-height:.95; margin:1.5rem 0; }
+.uav-designer-manifest>p { align-self:end; color:#545a5c; font-size:1.05rem; line-height:1.75; margin:0; max-width:46rem; }
+.uav-capabilities { background:#0d1115; }
+.uav-section-head { display:grid; gap:2rem; grid-template-columns:.5fr 1.5fr; margin-bottom:5rem; }
+.uav-section-head h2 { margin:0; }
+.uav-capability-grid { border-left:1px solid rgba(255,255,255,.13); border-top:1px solid rgba(255,255,255,.13); display:grid; grid-template-columns:repeat(3,1fr); }
+.uav-capability-grid article { border-bottom:1px solid rgba(255,255,255,.13); border-right:1px solid rgba(255,255,255,.13); min-height:22rem; padding:2rem; }
+.uav-capability-grid article>span { color:var(--uav-red); font-family:"Orbitron",sans-serif; font-size:.62rem; }
+.uav-capability-grid h3 { font-size:clamp(1.6rem,2.2vw,2.4rem); font-weight:400; margin:6rem 0 1rem; }
+.uav-capability-grid p { color:rgba(255,255,255,.48); line-height:1.65; }
+.uav-workflow { background:#c91d27; color:#fff; display:grid; gap:clamp(4rem,9vw,10rem); grid-template-columns:.82fr 1.18fr; }
+.uav-workflow>div>p { color:rgba(255,255,255,.7); line-height:1.65; max-width:42rem; }
+.uav-workflow .uav-kicker { color:#2e0709; }
+.uav-workflow ol { list-style:none; margin:0; padding:0; }
+.uav-workflow li { border-top:1px solid rgba(0,0,0,.25); display:grid; gap:1.5rem; grid-template-columns:3rem 1fr; padding:1.5rem 0; }
+.uav-workflow li>span { color:#4c090d; font-family:"Orbitron",sans-serif; font-size:.65rem; }
+.uav-workflow strong { font-size:1.3rem; font-weight:500; }
+.uav-workflow li p { color:rgba(255,255,255,.7); line-height:1.6; margin:.5rem 0 0; }
+.uav-technical { background:radial-gradient(circle at 80% 50%,rgba(207,32,41,.18),transparent 25rem),#0b0f12; }
+.uav-technical h2 { max-width:70rem; }
+.uav-technical>p { color:rgba(255,255,255,.52); line-height:1.75; max-width:58rem; }
+.uav-cta.light { margin-top:1.5rem; }
+.uav-footer { background:#030506; padding:clamp(6rem,10vw,10rem) clamp(1.5rem,7vw,8rem) 2rem; }
+.uav-footer h2 { margin-top:5rem; }
+.uav-footer>p { color:rgba(255,255,255,.5); line-height:1.7; max-width:44rem; }
+.uav-footer>div { border-top:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.4); display:flex; font-size:.7rem; justify-content:space-between; margin-top:7rem; padding-top:1.5rem; }
+@media (max-width:900px) {
+  .uav-designer-hero,.uav-designer-manifest,.uav-section-head,.uav-workflow { grid-template-columns:1fr; }
+  .uav-designer-visual { margin:0 2rem 5rem; }
+  .uav-capability-grid { grid-template-columns:repeat(2,1fr); }
+  .uav-designer-manifest>p { align-self:auto; }
+}
+@media (max-width:600px) {
+  .uav-designer-header nav a:not(:last-child) { display:none; }
+  .uav-designer-copy { padding-top:9rem; }
+  .uav-designer-copy h1 { font-size:clamp(3.4rem,17vw,5.6rem); }
+  .uav-capability-grid { grid-template-columns:1fr; }
+  .uav-capability-grid article { min-height:18rem; }
+  .uav-capability-grid h3 { margin-top:4rem; }
 }
 
 /* Engenharia de produto e modelagem 3D */

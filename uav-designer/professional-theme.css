@@ -1,0 +1,91 @@
+/* Sirius UAV Designer Pro — refinamento premium sobre a identidade escura original. */
+:root{
+  --bg:#070809;--panel:#111316;--panel-2:#171a1e;--line:#2b2f34;
+  --text:#f1f2f3;--muted:#949ba1;--red:#8e1f2c;--red2:#5f111a;
+  --ok:#58d292;--warn:#e7b75b;--bad:#ff6570;
+  --wine-glow:rgba(142,31,44,.18);--shadow:0 18px 50px rgba(0,0,0,.28);
+}
+html{background:var(--bg)}
+body{background:radial-gradient(circle at 78% 7%,rgba(142,31,44,.075),transparent 27%),linear-gradient(180deg,#070809,#090b0d 48%,#070809);color:var(--text);font-size:14px;line-height:1.45}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:42px 42px;z-index:-1}
+
+/* Barra principal fosca e compacta. */
+.topbar{height:74px;padding:0 max(26px,4vw);background:rgba(8,9,10,.91);border-bottom:1px solid #22262a;box-shadow:0 12px 38px rgba(0,0,0,.28);backdrop-filter:blur(20px)}
+.brand{color:#d8dbdd;font-size:11px}.brand:hover{color:#fff}.brand-mark{background:#a42d3a;box-shadow:0 0 18px rgba(164,45,58,.78)}
+.product{color:#747b81}.product b{color:#d6616d}
+main{max-width:1540px;padding:0 max(26px,4vw) 96px}
+
+/* Hero com profundidade, sem competir com a área operacional. */
+.hero{min-height:350px;padding:54px 0 46px;border-bottom:0}
+.hero:before{content:"SIRIUS / CONCEPT ENGINEERING";position:absolute;right:0;bottom:24px;color:rgba(255,255,255,.025);font-size:clamp(34px,6vw,88px);font-weight:700;letter-spacing:-.055em;white-space:nowrap;pointer-events:none}
+.hero:after{width:430px;height:430px;right:3%;background:radial-gradient(circle,rgba(142,31,44,.22),rgba(142,31,44,.035) 42%,transparent 70%);filter:blur(3px)}
+.eyebrow,.section-head span,.result-hero span{color:#c74754;font-weight:700}
+.hero h1{font-size:clamp(42px,4.9vw,74px);line-height:.97;margin:18px 0;color:#f4f5f5;max-width:930px}
+.hero h1 em{color:#7d848a}.lead{color:#a4abb0;font-size:17px;max-width:700px}
+.hero-status{border:1px solid #31353a;border-left:3px solid #8e1f2c;background:linear-gradient(145deg,rgba(24,27,30,.9),rgba(11,13,15,.88));padding:24px 28px;min-width:280px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.hero-status span,.hero-status small{color:#788087}.hero-status strong{color:#f2f3f4;font-size:29px}
+
+/* Navegação por módulos. */
+.tabs{top:74px;border:1px solid #262a2e;border-left:0;border-right:0;background:rgba(8,9,10,.94);backdrop-filter:blur(20px);box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.tabs button{padding:18px 22px;color:#727a80;border-bottom-width:3px;transition:.18s ease}
+.tabs button:hover{color:#d9dcde;background:rgba(255,255,255,.022)}
+.tabs button.active{color:#fff;border-color:#a52d3a;background:linear-gradient(180deg,rgba(142,31,44,.08),transparent)}
+.panel{padding-top:42px}
+.section-head{align-items:start;margin-bottom:25px;padding:0 2px}
+.section-head h2,.result-hero h2{font-size:clamp(31px,3vw,42px);font-weight:430;letter-spacing:-.035em;color:#f2f3f4}
+.section-head p{color:#8d959b;margin:4px 0 0;padding-left:24px;border-left:1px solid #34393e}
+
+/* Entradas com separação real entre grupos e foco mais preciso. */
+.context-status{background:linear-gradient(90deg,rgba(142,31,44,.12),#101316 38%);color:#969da3;border:1px solid #292d31;border-left:3px solid #9e2936;border-radius:5px;padding:13px 16px}
+.form-grid{gap:9px;background:transparent;border:0}
+.field{position:relative;background:linear-gradient(145deg,#14171a,#0f1113);border:1px solid #292d31;border-radius:5px;padding:16px;box-shadow:0 9px 24px rgba(0,0,0,.13);transition:border-color .18s,transform .18s,box-shadow .18s}
+.field:hover{border-color:#41464b;transform:translateY(-1px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.field:focus-within{border-color:#6f2931;box-shadow:0 0 0 2px rgba(142,31,44,.11),0 12px 28px rgba(0,0,0,.22)}
+.field label{color:#8f979d;font-weight:650}.field input,.field select{background:transparent;color:#f0f1f2;border-bottom:1px solid #3b4045;padding:9px 0}.field input:focus,.field select:focus{border-color:#a52d3a}.check input{accent-color:#991f2d}
+.primary,.ghost{border-radius:4px;padding:14px 20px;transition:.18s ease}
+.primary{background:linear-gradient(135deg,#9a2633,#741822);color:#fff;box-shadow:0 9px 24px rgba(116,24,34,.2)}
+.primary:hover{background:linear-gradient(135deg,#b33442,#841d28);transform:translateY(-1px);box-shadow:0 13px 30px rgba(142,31,44,.3)}
+.ghost{background:#101215;border:1px solid #41464b;color:#dfe1e2}.ghost:hover{border-color:#8e2934;color:#fff;background:#15171a}
+
+/* Síntese executiva e cartões métricos. */
+.result-hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#171a1d,#0c0e10 65%);border:1px solid #31353a;border-left:4px solid #9f2a37;border-radius:7px;padding:30px;box-shadow:var(--shadow)}
+.result-hero:after{content:"";position:absolute;right:-80px;top:-130px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(142,31,44,.17),transparent 68%);pointer-events:none}
+.result-hero p{color:#949ba1}.result-hero span{color:#d15a66}.scores{position:relative;z-index:1}.score{color:#c7cbce}.bar{background:#30353a;border-radius:4px;overflow:hidden}.bar i{background:linear-gradient(90deg,#741822,#c23b48);box-shadow:0 0 10px rgba(194,59,72,.45)}
+.metric-grid{gap:9px;background:transparent;border:0;margin:14px 0 24px}
+.metric{position:relative;overflow:hidden;background:linear-gradient(145deg,#15181b,#101215);border:1px solid #2c3034;border-radius:6px;padding:20px;box-shadow:0 10px 28px rgba(0,0,0,.15)}
+.metric:before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:#8e2632;box-shadow:0 0 12px rgba(142,38,50,.5)}
+.metric:after{content:"";position:absolute;right:-35px;bottom:-55px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(142,31,44,.08),transparent 68%)}
+.metric span,.metric strong{margin-left:6px}.metric span{color:#777f85}.metric strong{color:#f1f2f3;font-weight:430}
+
+/* Painéis técnicos: profundidade discreta e alinhamento consistente. */
+article{background:linear-gradient(145deg,#131619,#0f1113);border:1px solid #2a2e32;border-radius:7px;box-shadow:0 13px 34px rgba(0,0,0,.16)}
+article:hover{border-color:#34393e}h3{color:#b8bdc1;font-weight:720}.kv{border-bottom:1px solid #25292d}.kv span{color:#7f878d}.kv b{color:#d9dcde;font-weight:480}
+.sketch canvas,.chart-grid canvas,#airfoilChart{background:#090b0d;border:1px solid #272b2f;border-radius:4px;box-shadow:inset 0 0 30px rgba(0,0,0,.35)}
+.visual-legend{color:#737b81}.visual-legend i{background:#bfc4c7}.visual-legend i.red{background:#a82d39}
+
+/* Tabelas e BOM com leitura técnica rápida. */
+.table-wrap{border:1px solid #2c3034;border-radius:6px;background:#0e1012;box-shadow:0 14px 38px rgba(0,0,0,.18)}
+th{background:linear-gradient(180deg,#202429,#1a1d21);color:#9da4a9;border-bottom:1px solid #353a3f}
+td{color:#c8cccf;border-top:1px solid #272b2f;background:#101214}tbody tr:hover td{background:#15181b}
+.bom-summary,.summary-strip,.catalog-stats{gap:9px;background:transparent;border:0}
+.bom-summary div,.summary-strip div,.catalog-stats div{background:linear-gradient(145deg,#15181b,#101214);border:1px solid #2b2f33;border-radius:6px;box-shadow:0 9px 26px rgba(0,0,0,.14)}
+.bom-summary strong,.summary-strip strong,.catalog-stats strong{color:#eef0f1}.bom-summary span,.bom-toolbar label>span,.bom-count span,.summary-strip span,.catalog-stats span{color:#737b81}
+.bom-toolbar input,.bom-toolbar select,.catalog-toolbar input,.catalog-toolbar select{background:#101215;border:1px solid #30353a;color:#e7e9ea;border-radius:4px}.bom-toolbar input:focus,.bom-toolbar select:focus,.catalog-toolbar input:focus,.catalog-toolbar select:focus{border-color:#78232d;box-shadow:0 0 0 2px rgba(142,31,44,.1);outline:none}
+.bom-table-wrap{background:#0d0f11}.bom-table th{background:#1b1f23}.bom-table td{background:#0f1113;color:#c9cdd0}.bom-table td:nth-child(4),.bom-table td:nth-child(5){color:#969da2}.bom-table tbody tr:not(.bom-group):hover td{background:#15191c}
+.bom-group td{background:linear-gradient(90deg,#20181b,#181b1e);border-color:#34383c}.bom-group span{color:#e1e3e4}.bom-group small{color:#747c82}.bom-table .system-pill{color:#bec3c6}.bom-table .part-id{color:#687177}.bom-table .part-id.pending{color:#aa8240}
+.qty-badge{background:#251317;border:1px solid #5b222a;color:#efa6ae;border-radius:4px;box-shadow:inset 0 0 12px rgba(142,31,44,.1)}
+.bom-empty{background:#0f1113!important}.bom-empty strong{color:#dfe1e2}.bom-empty span{color:#747c82}
+
+/* Assurance, riscos e catálogo. */
+.gate,.warning{border-bottom:1px solid #292d31}.tag{font-weight:800}.PASS{color:var(--ok)}.FAIL{color:var(--bad)}.OPEN,.ANALYSIS{color:var(--warn)}
+.risk,.assurance,.catalog-card{background:linear-gradient(145deg,#14171a,#101214);border:1px solid #2b2f33;border-radius:6px;box-shadow:0 10px 28px rgba(0,0,0,.15);transition:.18s ease}
+.risk:hover,.assurance:hover,.catalog-card:hover{border-color:#454a4f;transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.23)}
+.risk header,.catalog-card header{color:#747c82}.risk h4,.assurance h4,.catalog-card h4{color:#e4e6e7}.risk p,.assurance p,.catalog-card p{color:#939aa0}
+.catalog-specs,.catalog-meta{border-color:#292d31}.catalog-specs div{border-color:#25292d}.catalog-specs dt,.catalog-meta{color:#717980}.catalog-specs dd{color:#cbd0d2}
+.catalog-badge{border-color:#3c4146;color:#939ba0;border-radius:3px}.catalog-badge.reference{border-color:#315d46;color:var(--ok)}.catalog-badge.template{border-color:#6b562f;color:var(--warn)}
+.catalog-card a,.technical-link{color:#d05a66}.catalog-card a:hover,.technical-link:hover{color:#fff}
+footer{background:#08090a;border-top:1px solid #24282c;color:#747c82;padding:48px max(26px,4vw)}footer span{color:#cfd3d5}footer a{color:#fff}
+#toast{background:#191c20;color:#fff;border-left-color:#a72d39;border-radius:4px;box-shadow:0 16px 40px rgba(0,0,0,.42)}
+
+@media(max-width:1000px){.hero{min-height:320px}.section-head p{padding-left:18px}.metric-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.topbar{height:68px}.tabs{top:68px}main{padding-left:18px;padding-right:18px}.hero{padding:42px 0 34px}.hero:before{display:none}.hero h1{font-size:40px}.section-head p{padding-left:0;border-left:0}.metric-grid{grid-template-columns:1fr}.result-hero{padding:22px}.bom-summary div{min-height:92px}}
