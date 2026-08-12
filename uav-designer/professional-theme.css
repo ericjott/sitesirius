@@ -71,6 +71,11 @@ td{color:#c8cccf;border-top:1px solid #272b2f;background:#101214}tbody tr:hover 
 .bom-summary div,.summary-strip div,.catalog-stats div{background:linear-gradient(145deg,#15181b,#101214);border:1px solid #2b2f33;border-radius:6px;box-shadow:0 9px 26px rgba(0,0,0,.14)}
 .bom-summary strong,.summary-strip strong,.catalog-stats strong{color:#eef0f1}.bom-summary span,.bom-toolbar label>span,.bom-count span,.summary-strip span,.catalog-stats span{color:#737b81}
 .bom-toolbar input,.bom-toolbar select,.catalog-toolbar input,.catalog-toolbar select{background:#101215;border:1px solid #30353a;color:#e7e9ea;border-radius:4px}.bom-toolbar input:focus,.bom-toolbar select:focus,.catalog-toolbar input:focus,.catalog-toolbar select:focus{border-color:#78232d;box-shadow:0 0 0 2px rgba(142,31,44,.1);outline:none}
+
+/* Mantém o menu nativo dos dropdowns legível no tema escuro. */
+select{background-color:#101215!important;color:#f1f2f3!important;color-scheme:dark}
+select option,select optgroup{background:#101215;color:#f1f2f3}
+select option:checked{background:#8f1f2c;color:#fff}
 .bom-table-wrap{background:#0d0f11}.bom-table th{background:#1b1f23}.bom-table td{background:#0f1113;color:#c9cdd0}.bom-table td:nth-child(4),.bom-table td:nth-child(5){color:#969da2}.bom-table tbody tr:not(.bom-group):hover td{background:#15191c}
 .bom-group td{background:linear-gradient(90deg,#20181b,#181b1e);border-color:#34383c}.bom-group span{color:#e1e3e4}.bom-group small{color:#747c82}.bom-table .system-pill{color:#bec3c6}.bom-table .part-id{color:#687177}.bom-table .part-id.pending{color:#aa8240}
 .qty-badge{background:#251317;border:1px solid #5b222a;color:#efa6ae;border-radius:4px;box-shadow:inset 0 0 12px rgba(142,31,44,.1)}
