@@ -237,12 +237,35 @@ const fmt = (v) =>
         ? "Sim"
         : "Não"
       : String(v ?? "—");
+const FIELD_HELP = {
+  project_name:"Identificação usada no relatório e no nome do arquivo JSON exportado.", mission_type:"Define o perfil operacional e ativa os parâmetros aplicáveis à missão.", preferred_architecture:"Permite deixar o sistema comparar as arquiteturas ou restringir a análise a uma configuração.", fixed_wing_layout:"Arranjo aerodinâmico da asa e da empenagem usado no pré-dimensionamento geométrico.", rotor_layout:"Quantidade e disposição dos rotores; afeta empuxo, potência, redundância e massa.", vtol_layout:"Mecanismo adotado para combinar decolagem vertical e voo de cruzeiro.", payload_mass_kg:"Massa total da carga útil transportada, incluindo suportes e acessórios dedicados.", payload_power_w:"Potência elétrica contínua consumida pela carga útil durante a missão.", payload_data_mbps:"Taxa de dados produzida pelo payload, usada para avaliar armazenamento e enlace.", target_endurance_min:"Tempo total de voo requerido, já considerando as fases previstas da missão.", mission_range_km:"Maior distância operacional até a estação, usada nos cálculos de alcance e enlace RF.", corridor_length_km:"Extensão linear total a ser inspecionada em missões de corredor.", area_km2:"Área de cobertura planejada para estimar linhas, imagens e duração da aquisição.", cruise_speed_kmh:"Velocidade nominal no trecho principal; influencia arrasto, potência e produtividade.", stall_speed_mps:"Velocidade máxima de estol aceitável, usada para limitar carga e área alar.", altitude_m:"Altitude em relação ao nível do mar usada no modelo atmosférico ISA.", mission_agl_m:"Altura de operação acima do terreno, usada na resolução e faixa do sensoriamento.", max_wind_mps:"Maior vento operacional considerado para alcance, controle e retorno seguro.", hover_required:"Indica se a missão exige voo pairado sustentado, influenciando a seleção da arquitetura.", runway_available:"Informa se há pista adequada para lançamento e recuperação da aeronave.", launch_area_m:"Dimensão linear aproximada da área disponível para decolagem ou lançamento.", precision_cm:"Precisão de posicionamento requerida; orienta GNSS, RTK e requisitos de navegação.", redundancy:"Nível de tolerância a falhas desejado para propulsão, energia, navegação e comunicação.", max_mtow_kg:"Limite máximo permitido para a massa total de decolagem do conceito.", radio_frequency_mhz:"Frequência central usada no cálculo preliminar de propagação do enlace.", reserve_fraction:"Parcela da energia que não deve ser consumida na missão normal. Exemplo: 0,20 equivale a 20%.", preferred_airfoil:"Perfil aerodinâmico preferido; em Automático o sistema seleciona conforme Reynolds e missão.", sensor_width_mm:"Largura física da área ativa do sensor de imagem.", sensor_height_mm:"Altura física da área ativa do sensor de imagem.", image_width_px:"Resolução horizontal da imagem produzida pelo sensor.", image_height_px:"Resolução vertical da imagem produzida pelo sensor.", focal_length_mm:"Distância focal da lente, determinante para campo de visão e GSD.", exposure_time_ms:"Tempo do obturador, usado para estimar o arrasto de imagem durante o voo.", front_overlap_pct:"Sobreposição entre imagens consecutivas na direção do voo.", side_overlap_pct:"Sobreposição entre faixas de voo adjacentes.", tx_power_dbm:"Potência entregue pelo transmissor ao sistema de antena, expressa em dBm.", tx_gain_dbi:"Ganho da antena transmissora em relação a uma antena isotrópica.", rx_gain_dbi:"Ganho da antena receptora usado no orçamento do enlace.", receiver_sensitivity_dbm:"Menor nível de sinal que o receptor consegue demodular na taxa prevista.", link_losses_db:"Soma das perdas adicionais em cabos, conectores, polarização, instalação e margem ambiental."
+};
+const RESULT_HELP = {
+  "ARQUITETURA RECOMENDADA":"Configuração com melhor compromisso entre os requisitos informados e os modelos disponíveis.", "MTOW":"Massa total estimada da aeronave pronta para decolagem.", "BATERIA":"Massa estimada do conjunto de baterias necessário para a missão.", "AUTONOMIA CALCULADA":"Tempo de voo estimado após consumo, eficiência e reserva energética.", "STATUS GLOBAL":"Síntese dos gates de engenharia: não representa certificação ou liberação para voo.", "FALHAS":"Quantidade de verificações que não atenderam aos limites do modelo.", "REQUISITOS ABERTOS":"Requisitos que ainda dependem de cálculo detalhado, evidência, ensaio ou decisão.", "ITENS DISTINTOS":"Número de linhas diferentes na lista preliminar de materiais.", "UNIDADES PREVISTAS":"Soma das quantidades preliminares de todos os itens da BOM.", "SUBSISTEMAS":"Quantidade de grupos funcionais representados na lista de materiais.", "VINCULADOS AO CATÁLOGO":"Itens da BOM associados a uma referência ou classe existente no catálogo.", "GATES DE VERIFICAÇÃO":"Verificações automáticas de coerência, margem e atendimento aos requisitos.", "ALERTAS E PENDÊNCIAS":"Limitações, hipóteses e validações que precisam de revisão profissional.", "HAZARD LOG / FMEA":"Riscos iniciais, efeitos, mitigação proposta e evidência esperada.", "MATRIZ DE REQUISITOS":"Rastreia cada requisito até seu valor, método de verificação e estado.", "ASSURANCE MULTIDISCIPLINAR":"Evidências ainda necessárias em cada disciplina antes de uma revisão formal."
+};
+function helpButton(text) {
+  return `<span class="help-tip" tabindex="0" role="button" aria-label="Ajuda: ${esc(text)}"><span aria-hidden="true">?</span><span class="help-popover" role="tooltip">${esc(text)}</span></span>`;
+}
+function resultHelp(title) {
+  const clean = String(title ?? "").replace(/\s+/g," ").trim();
+  return RESULT_HELP[clean] ?? `Explica o resultado “${clean}”, calculado a partir dos requisitos informados e das hipóteses do modelo conceitual.`;
+}
+function decorateResultHelp() {
+  ["configuration","bom","assurance"].forEach((id) => {
+    document.querySelectorAll(`#${id} h2,#${id} h3,#${id} .metric>span,#${id} .kv>span,#${id} .summary-strip span,#${id} .bom-summary span,#${id} th`).forEach((el) => {
+      if (el.querySelector(":scope > .help-tip")) return;
+      const title = el.textContent.trim();
+      el.insertAdjacentHTML("beforeend", helpButton(resultHelp(title)));
+    });
+  });
+}
 function fieldHtml([key, name, type, options], value) {
+  const help = helpButton(FIELD_HELP[key] ?? `Informe ${name.toLowerCase()} para compor os cálculos e verificações do conceito.`);
   if (type === "checkbox")
-    return `<div class="field" data-field="${key}"><label>${name}</label><div class="check"><input id="${key}" name="${key}" type="checkbox" ${value ? "checked" : ""}><span>${value ? "Sim" : "Não"}</span></div></div>`;
+    return `<div class="field" data-field="${key}"><label>${name}${help}</label><div class="check"><input id="${key}" name="${key}" type="checkbox" ${value ? "checked" : ""}><span>${value ? "Sim" : "Não"}</span></div></div>`;
   if (type === "select")
-    return `<div class="field" data-field="${key}"><label for="${key}">${name}</label><select id="${key}" name="${key}">${options.map((x) => `<option ${x === value ? "selected" : ""}>${x}</option>`).join("")}</select></div>`;
-  return `<div class="field" data-field="${key}"><label for="${key}">${name}</label><input id="${key}" name="${key}" type="${type}" value="${esc(value)}" ${type === "number" ? 'step="any"' : ""}></div>`;
+    return `<div class="field" data-field="${key}"><label for="${key}">${name}${help}</label><select id="${key}" name="${key}">${options.map((x) => `<option ${x === value ? "selected" : ""}>${x}</option>`).join("")}</select></div>`;
+  return `<div class="field" data-field="${key}"><label for="${key}">${name}${help}</label><input id="${key}" name="${key}" type="${type}" value="${esc(value)}" ${type === "number" ? 'step="any"' : ""}></div>`;
 }
 function setFieldAccess(key, enabled) {
   const wrap = document.querySelector(`[data-field="${key}"]`),
@@ -331,7 +354,7 @@ function kv(obj) {
     .filter(([, v]) => v == null || typeof v !== "object")
     .map(
       ([k, v]) =>
-        `<div class="kv"><span>${esc(label(k))}</span><b>${esc(fmt(v))}</b></div>`,
+        `<div class="kv"><span>${esc(label(k))}${helpButton(resultHelp(label(k)))}</span><b>${esc(fmt(v))}</b></div>`,
     )
     .join("");
 }
@@ -350,6 +373,7 @@ function renderBomGrouped(r) {
   $("#bomSearch").disabled = false;
   $("#bomSystem").disabled = false;
   filterBom();
+  decorateResultHelp();
 }
 function filterBom() {
   if (!result) return;
@@ -493,6 +517,7 @@ function render(r) {
     )
     .join("");
   filterCatalog();
+  decorateResultHelp();
 }
 function renderCatalog(list) {
   const visible = list.slice(0, 96);
@@ -589,6 +614,7 @@ async function init() {
   $("#catalogStats").innerHTML =
     `<div><strong>${catalog.length}</strong><span>ITENS TÉCNICOS</span></div><div><strong>${categories.length}</strong><span>CATEGORIAS / ${systems.length} SISTEMAS</span></div><div><strong>${references}</strong><span>REFERÊNCIAS IDENTIFICADAS</span></div><div><strong>${catalogMeta.audit?.error_count ?? 0}</strong><span>ERROS DE ESQUEMA · ${catalogMeta.audit?.review_count ?? 0} EM REVISÃO</span></div>`;
   renderCatalog(catalog);
+  decorateResultHelp();
   updateFieldAccess();
   $("#missionForm").addEventListener("change", (e) => {
     if (e.target.type === "checkbox")
