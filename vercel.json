@@ -38,7 +38,7 @@
     },
     {
       "source": "/blog",
-      "destination": "/documentacao.html",
+      "destination": "/",
       "permanent": true
     },
     {
