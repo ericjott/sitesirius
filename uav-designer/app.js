@@ -422,15 +422,57 @@ const RESULT_HELP = {
   "ID":"Identificador único usado para rastrear o requisito ou gate.", "REQUISITO":"Condição técnica ou operacional derivada das entradas da missão.", "VALOR":"Meta, limite ou condição associada ao requisito.", "VERIFICAÇÃO":"Método previsto para demonstrar atendimento, como análise, inspeção, teste ou ensaio.", "STATUS":"Estado atual de atendimento ou maturidade da evidência."
 };
 function helpButton(text) {
-  return `<span class="help-tip" tabindex="0" role="button" title="${esc(text)}" aria-label="Ajuda: ${esc(text)}"><span aria-hidden="true">?</span><span class="help-popover" role="tooltip">${esc(text)}</span></span>`;
+  return `<span class="help-tip" tabindex="0" role="button" aria-label="Ajuda: ${esc(text)}"><span aria-hidden="true">?</span><span class="help-popover" role="tooltip">${esc(text)}</span></span>`;
 }
+let floatingHelp = null;
+function showHelp(button) {
+  const source = button?.querySelector(".help-popover");
+  if (!source) return;
+  if (!floatingHelp) {
+    floatingHelp = document.createElement("div");
+    floatingHelp.className = "help-floating";
+    floatingHelp.setAttribute("role", "tooltip");
+    document.body.appendChild(floatingHelp);
+  }
+  floatingHelp.textContent = source.textContent;
+  floatingHelp.classList.add("show");
+  floatingHelp.style.left = "12px";
+  floatingHelp.style.top = "12px";
+  const anchor = button.getBoundingClientRect(), box = floatingHelp.getBoundingClientRect(), gap = 10;
+  let left = anchor.left + anchor.width / 2 - box.width / 2;
+  left = Math.max(12, Math.min(left, window.innerWidth - box.width - 12));
+  let top = anchor.top - box.height - gap;
+  if (top < 86) top = anchor.bottom + gap;
+  floatingHelp.style.left = `${left}px`;
+  floatingHelp.style.top = `${top}px`;
+}
+function hideHelp() {
+  floatingHelp?.classList.remove("show");
+}
+document.addEventListener("mouseover", (event) => {
+  const button = event.target.closest?.(".help-tip");
+  if (button) showHelp(button);
+});
+document.addEventListener("mouseout", (event) => {
+  const button = event.target.closest?.(".help-tip");
+  if (button && !button.contains(event.relatedTarget)) hideHelp();
+});
+document.addEventListener("focusin", (event) => {
+  const button = event.target.closest?.(".help-tip");
+  if (button) showHelp(button);
+});
+document.addEventListener("focusout", (event) => {
+  if (event.target.closest?.(".help-tip")) hideHelp();
+});
+window.addEventListener("scroll", hideHelp, true);
+window.addEventListener("resize", hideHelp);
 function resultHelp(key, title = key) {
   const clean = String(title ?? key ?? "").replace(/\s+/g," ").trim();
   return RESULT_HELP_BY_KEY[key] ?? RESULT_HELP[clean.toUpperCase()] ?? `Valor técnico de ${clean.toLowerCase()} obtido no pré-dimensionamento. Revise as hipóteses, unidades, margens e evidências associadas antes de consolidar o projeto.`;
 }
 function decorateResultHelp() {
   ["configuration","bom","assurance"].forEach((id) => {
-    document.querySelectorAll(`#${id} h2,#${id} h3,#${id} #status,#${id} .metric>span,#${id} .score>span,#${id} .kv>span,#${id} .summary-strip span,#${id} .bom-summary span,#${id} .bom-toolbar label>span,#${id} .bom-count>span,#${id} th,#${id} .gate b,#${id} .risk h4,#${id} .assurance h4`).forEach((el) => {
+    document.querySelectorAll(`#${id} h2,#${id} h3,#${id} #status,#${id} .metric>span,#${id} .score>span,#${id} .kv>span,#${id} .summary-strip>div>span,#${id} .bom-summary>div>span,#${id} .bom-toolbar label>span,#${id} .bom-count>span,#${id} th,#${id} .gate b,#${id} .risk h4,#${id} .assurance h4`).forEach((el) => {
       if (el.querySelector(":scope > .help-tip")) return;
       const title = el.textContent.trim();
       const key = el.id === "architecture" ? "architecture_result" : el.id === "status" ? "analysis_status" : title;
