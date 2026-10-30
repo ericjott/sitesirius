@@ -435,3 +435,6 @@ body{background:#070809;color:#e8e9eb}
 @media(max-width:520px){
   .hero-symbol{aspect-ratio:1.7917}
 }
+
+.brand-icon img{height:29px;object-fit:contain;width:29px}
+@media(max-width:520px){.brand-icon img{height:24px;width:24px}}
