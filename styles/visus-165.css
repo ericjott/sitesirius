@@ -425,3 +425,13 @@ body{background:#070809;color:#e8e9eb}
   .responsibility-side>img{aspect-ratio:1;object-position:center}
   .resource-list article:first-child{background:linear-gradient(135deg,#15171b,#252a34)}
 }
+
+/* Mantém a assinatura VISUS PRO inteira em qualquer proporção de tela. */
+.hero{min-height:720px}
+.hero-symbol{height:100%;object-fit:contain;object-position:center;width:100%}
+@media(max-width:800px){
+  .hero-symbol{aspect-ratio:1.7917;height:auto;object-fit:contain;object-position:center}
+}
+@media(max-width:520px){
+  .hero-symbol{aspect-ratio:1.7917}
+}
