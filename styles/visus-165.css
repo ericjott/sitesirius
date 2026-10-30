@@ -438,3 +438,16 @@ body{background:#070809;color:#e8e9eb}
 
 .brand-icon img{height:29px;object-fit:contain;width:29px}
 @media(max-width:520px){.brand-icon img{height:24px;width:24px}}
+
+/* Barreiras de cópia, impressão e captura por atalhos do navegador. */
+body{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.content-guard{align-items:center;background:#070809;color:#fff;display:flex;flex-direction:column;inset:0;justify-content:center;opacity:0;pointer-events:none;position:fixed;transition:opacity .12s ease,visibility .12s ease;visibility:hidden;z-index:99999}
+.content-guard:before{border:1px solid #f47a35;border-radius:50%;content:'';height:86px;margin-bottom:22px;width:86px}
+.content-guard span{color:#f47a35;font-size:.7rem;font-weight:800;letter-spacing:.18em;margin-bottom:10px}
+.content-guard strong{font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(1.4rem,3vw,2.4rem)}
+body.content-obscured{overflow:hidden}
+body.content-obscured .content-guard{opacity:1;pointer-events:all;visibility:visible}
+@media print{
+  body>*{display:none!important}
+  body:before{align-items:center;background:#070809;color:#fff;content:'Conteúdo protegido — impressão desativada';display:flex;font:700 20px 'Space Grotesk',Arial,sans-serif;inset:0;justify-content:center;position:fixed}
+}
