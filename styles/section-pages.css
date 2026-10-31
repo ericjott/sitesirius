@@ -109,6 +109,9 @@ img { display: block; max-width: 100%; }
 .system-image { min-height:34rem; overflow:hidden; position:relative; }
 .system-image img { height:100%; object-fit:cover; transition:transform .6s ease; width:100%; }
 .system-image:hover img { transform:scale(1.02); }
+.system-feature-assembly .system-image { background:#f1f1ef; }
+.system-feature-assembly .system-image img { object-fit:contain; padding:clamp(1rem,3vw,3rem); }
+.system-feature-assembly .image-tag,.system-feature-assembly .button-primary { background:#ff5a24; }
 .image-tag { background:#d71920; bottom:0; color:#fff; font-size:.68rem; letter-spacing:.12em; padding:.8rem 1rem; position:absolute; text-transform:uppercase; }
 .system-copy { align-self:center; }
 .system-copy h2 { font-size:clamp(2.5rem,4.6vw,5.5rem); font-weight:300; letter-spacing:-.05em; line-height:.9; margin:1rem 0 2rem; }
