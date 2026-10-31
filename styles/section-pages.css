@@ -116,9 +116,12 @@ img { display: block; max-width: 100%; }
 .feature-list { border-top:1px solid rgba(255,255,255,.14); list-style:none; margin:2rem 0; padding:1rem 0 0; }
 .feature-list li { border-bottom:1px solid rgba(255,255,255,.14); padding:.75rem 0; }
 .system-feature-medical { margin-top:clamp(6rem,12vw,12rem); }
-.system-feature-medical .system-image { aspect-ratio:16/10; background:linear-gradient(145deg,#07111f,#101b28); min-height:0; order:2; padding:clamp(.75rem,1.6vw,1.25rem); }
+.system-feature-medical .system-image { aspect-ratio:16/10; background:linear-gradient(145deg,#070809,#191b20); min-height:0; order:2; padding:clamp(.75rem,1.6vw,1.25rem); }
 .system-feature-medical .system-copy { order:1; }
-.system-feature-medical .system-image img { background:#fff; border:1px solid rgba(216,233,247,.72); height:100%; object-fit:contain; object-position:center; }
+.system-feature-medical .system-image img { background:#0b0c0f; border:1px solid rgba(244,122,53,.32); height:100%; object-fit:contain; object-position:center; }
+.system-feature-medical .image-tag,.system-feature-medical .button-primary { background:#f47a35; color:#090a0c; }
+.system-feature-medical .button-primary:hover { background:#ff945e; }
+.system-feature-medical .eyebrow { color:#f47a35; }
 .system-feature-documents { margin-top:clamp(6rem,12vw,12rem); }
 .system-feature-documents .system-image img { object-position:center; }
 .system-feature-designer { margin-top:clamp(6rem,12vw,12rem); }
