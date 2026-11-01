@@ -98,6 +98,7 @@ select option:checked{background:#8f1f2c;color:#fff}
 .catalog-badge{border-color:#3c4146;color:#939ba0;border-radius:3px}.catalog-badge.reference{border-color:#315d46;color:var(--ok)}.catalog-badge.template{border-color:#6b562f;color:var(--warn)}
 .catalog-card a,.technical-link{color:#d05a66}.catalog-card a:hover,.technical-link:hover{color:#fff}
 footer{background:#08090a;border-top:1px solid #24282c;color:#747c82;padding:48px max(26px,4vw)}footer span{color:#cfd3d5}footer a{color:#fff}
+.embedded-mode .topbar,.embedded-mode footer{display:none}.embedded-mode .tabs{top:0}.embedded-mode main{padding-top:0}.embedded-mode .hero{min-height:300px;padding-top:38px}
 #toast{background:#191c20;color:#fff;border-left-color:#a72d39;border-radius:4px;box-shadow:0 16px 40px rgba(0,0,0,.42)}
 
 @media(max-width:1000px){.hero{min-height:320px}.section-head p{padding-left:18px}.metric-grid{grid-template-columns:repeat(2,1fr)}}
