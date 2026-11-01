@@ -1181,6 +1181,10 @@ img { display: block; max-width: 100%; }
 .project-meta span { border-bottom:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.5); display:grid; font-size:.84rem; gap:1rem; grid-template-columns:7rem 1fr; padding:.8rem 0; }
 .project-meta strong { color:#fff; font-weight:400; }
 .projects-status { border-top:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.4); display:flex; font-size:.75rem; justify-content:space-between; margin-top:6rem; padding-top:1rem; }
+.projects-empty { align-items:start; background:radial-gradient(circle at 84% 18%,rgba(215,25,32,.18),transparent 28rem),#101315; border-top:1px solid rgba(255,255,255,.16); display:grid; min-height:34rem; padding:clamp(2rem,5vw,5rem); }
+.projects-empty h2 { font-size:clamp(3rem,6.5vw,7.2rem); font-weight:300; letter-spacing:-.06em; line-height:.9; margin:clamp(3rem,7vw,7rem) 0 1.5rem; max-width:70rem; }
+.projects-empty p { color:rgba(255,255,255,.55); font-size:1.08rem; line-height:1.7; max-width:48rem; }
+.projects-empty>div { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.5rem; }
 
 /* Projeto Nexus V */
 .nexus-project-page { --nexus-red:#e31b23; --nexus-ink:#080a0b; --nexus-panel:#111619; --nexus-paper:#efeee9; background:var(--nexus-ink); color:#f6f4ef; overflow:hidden; }
