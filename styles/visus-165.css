@@ -467,3 +467,4 @@ body{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 /* Preserva as imagens completas: capturas de tela e hero não devem ser cortadas. */
 .hero-clinic-image{object-fit:contain!important;object-position:center!important}
 .evidence-card img,.evidence-card-large img{object-fit:contain!important;object-position:center!important;padding:10px}
+.lead-form button:disabled{cursor:wait;opacity:.65}.form-status{font-size:.83rem;line-height:1.45;margin:0}.form-status a{color:#c9223b;font-weight:700}.form-error{background:#fde7ea;border-left:4px solid #ef304a;color:#8d1b2d;padding:12px 14px}.form-success{margin:0!important}
