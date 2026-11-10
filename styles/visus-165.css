@@ -474,3 +474,14 @@ body{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 /* Hero mobile: recorte editorial para destacar o monitor sem deformar a foto. */
 @media(max-width:800px){.hero-media{background:#d8d8d8;min-height:390px}.hero-clinic-image{aspect-ratio:auto!important;height:390px!important;object-fit:cover!important;object-position:center 68%!important}.hero-media:before{background:linear-gradient(180deg,#08090b00 58%,#08090b38 100%)}}
 @media(max-width:520px){.hero-media{min-height:315px}.hero-clinic-image{height:315px!important;object-position:center 68%!important}.media-caption{bottom:14px}}
+
+/* SEO e leitura: dúvidas reais antes do contato comercial. */
+.faq{background:#f0f2f5;color:#101217}
+.faq .eyebrow{color:#ef304a;font-size:.78rem;font-weight:800;letter-spacing:.12em;margin-bottom:18px}
+.faq h2{font-size:clamp(2.6rem,5.4vw,5.5rem);letter-spacing:-.065em;line-height:1.04;max-width:1000px}
+.faq h2 span{color:#1553c9}
+.faq-list{border-top:1px solid #c7ccd4;margin-top:48px}
+.faq-list details{border-bottom:1px solid #c7ccd4;padding:22px 0}
+.faq-list summary{cursor:pointer;font:700 clamp(1.15rem,1.8vw,1.55rem) 'Space Grotesk',Arial,sans-serif;line-height:1.35;list-style-position:outside}
+.faq-list p{color:#3e5068;font-size:1rem;line-height:1.7;margin:14px 0 0;max-width:900px}
+@media(max-width:520px){.hero h1{font-size:clamp(3.05rem,12vw,4.3rem);white-space:normal}.hero h1>span{font-size:.62em}.faq h2{font-size:clamp(2.4rem,10vw,3.6rem)}.faq-list{margin-top:32px}.faq-list details{padding:18px 0}}
