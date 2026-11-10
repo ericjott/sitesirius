@@ -52,6 +52,11 @@
       "permanent": true
     },
     {
+      "source": "/terms-and-coniditions",
+      "destination": "/termos-de-uso.html",
+      "permanent": true
+    },
+    {
       "source": "/blank-2",
       "destination": "/",
       "permanent": true
