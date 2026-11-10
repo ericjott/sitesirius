@@ -464,6 +464,19 @@ body{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 @media(max-width:800px){.proof-strip{grid-template-columns:repeat(2,1fr);padding:0 20px}.proof-strip>div,.proof-strip>div:first-child{border-bottom:1px solid #090a0c33;padding:22px 14px}.proof-strip>div:nth-child(2){border-right:0}.proof-strip>div:nth-child(3){padding-left:0}.proof-strip>div:last-child{border-bottom:0}.results-grid,.evidence-heading{grid-template-columns:1fr}.evidence-heading{gap:28px;margin-bottom:40px}.evidence-card-large{grid-column:span 12;grid-row:auto}.evidence-card-large img{height:auto}.evidence-card:nth-child(n+2){grid-column:span 6}.contact-grid{gap:40px}.lead-form{padding:26px}}
 @media(max-width:520px){.proof-strip{grid-template-columns:1fr}.proof-strip>div,.proof-strip>div:first-child,.proof-strip>div:nth-child(3){border-bottom:1px solid #090a0c33;border-right:0;padding:19px 0}.proof-strip>div:last-child{border-bottom:0}.results-copy>p{font-size:1.05rem}.results-points>div{gap:14px}.evidence-grid{display:block}.evidence-card{margin-bottom:14px}.evidence-card img,.evidence-card-large img{height:auto;max-height:none}.lead-form{padding:22px}}
 
+/* Pagina especializada: endoscopia digestiva e laudos. */
+.visus-endoscopy .hero h1{font-size:clamp(3.5rem,6vw,6.4rem);line-height:.98;max-width:12ch;white-space:normal}
+.visus-endoscopy .hero h1>span{color:#f47a35;font-size:.66em}
+.visus-endoscopy .hero-promise{max-width:600px}
+.visus-endoscopy .hero-facts{gap:clamp(14px,2vw,28px);margin-top:42px}
+.visus-endoscopy .breadcrumb{color:#9ba9bc;font-size:.76rem;margin:0 0 26px}
+.visus-endoscopy .breadcrumb a{color:#d9e2ef;text-underline-offset:3px}
+.visus-endoscopy .specialty-link{color:#1654c8;font-weight:700;text-underline-offset:3px}
+.visus-endoscopy .compatibility-checklist{border-top:1px solid #354560;list-style:none;margin:25px 0 0;padding:0}
+.visus-endoscopy .compatibility-checklist li{border-bottom:1px solid #354560;color:#c2cde0;padding:13px 0}
+.visus-endoscopy .compatibility-checklist li:before{color:#f47a35;content:'↗';font-weight:800;margin-right:12px}
+@media(max-width:800px){.visus-endoscopy .hero h1{font-size:clamp(3.25rem,12vw,5rem);max-width:14ch}.visus-endoscopy .hero-facts{flex-wrap:wrap}}
+
 /* Preserva as imagens completas: capturas de tela e hero não devem ser cortadas. */
 .hero-clinic-image{object-fit:contain!important;object-position:center!important}
 .evidence-card img,.evidence-card-large img{object-fit:contain!important;object-position:center!important;padding:10px}
