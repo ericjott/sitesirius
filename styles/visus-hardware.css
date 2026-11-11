@@ -176,4 +176,23 @@ body.hw-page{margin:0;background:var(--hw-bg);color:var(--hw-text);font-family:'
  .hw-nav .hw-nav-cta{max-width:128px;width:100%}
  .hw-hero h1{font-size:clamp(2.25rem,9.4vw,2.55rem);letter-spacing:-.07em}
 }
+
+/* Keep the two hardware photos on a shared, uncropped frame. */
+.hw-hero-visual{align-items:stretch;grid-template-columns:repeat(2,minmax(0,1fr))}
+.hw-page .hw-device-tile{display:flex;flex-direction:column;justify-content:space-between;min-width:0;transform:none}
+.hw-page .hw-device-tile img{flex:none;height:270px;max-width:100%;object-fit:contain;width:100%}
+.hw-page .hw-product-visual{align-items:center;justify-content:center}
+.hw-page .hw-product-visual img{display:block;flex:none;height:300px;max-height:100%;max-width:100%;object-fit:contain;width:100%}
+@media(max-width:700px){
+ .hw-hero-visual{min-height:0}
+ .hw-page .hw-device-tile img{height:210px}
+ .hw-product-visual{min-height:250px}
+ .hw-page .hw-product-visual img{height:230px}
+}
+@media(max-width:430px){
+ .hw-hero-visual{gap:8px}
+ .hw-page .hw-device-tile img{height:170px}
+ .hw-product-visual{min-height:220px}
+ .hw-page .hw-product-visual img{height:200px}
+}
 @media(max-width:520px){.hw-whatsapp{align-items:center;height:52px;justify-content:center;padding:0;width:52px}.hw-whatsapp span{display:none}}
