@@ -498,3 +498,7 @@ body{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 .faq-list summary{cursor:pointer;font:700 clamp(1.15rem,1.8vw,1.55rem) 'Space Grotesk',Arial,sans-serif;line-height:1.35;list-style-position:outside}
 .faq-list p{color:#3e5068;font-size:1rem;line-height:1.7;margin:14px 0 0;max-width:900px}
 @media(max-width:520px){.hero h1{font-size:clamp(3.05rem,12vw,4.3rem);white-space:normal}.hero h1>span{font-size:.62em}.faq h2{font-size:clamp(2.4rem,10vw,3.6rem)}.faq-list{margin-top:32px}.faq-list details{padding:18px 0}}
+
+.evidence-video{align-items:center;background:#191b20;border:1px solid #32363f;display:grid;gap:clamp(24px,5vw,72px);grid-template-columns:minmax(0,380px) 1fr;margin:0 0 20px;padding:clamp(18px,3vw,36px)}.evidence-video video{aspect-ratio:9/16;background:#000;display:block;height:auto;max-height:78vh;width:100%}.evidence-video figcaption{display:flex;flex-direction:column;gap:14px}.evidence-video-tag{color:var(--red);font:700 .78rem 'Space Grotesk',Arial,sans-serif;letter-spacing:.14em}.evidence-video figcaption strong{font:700 clamp(1.5rem,2.6vw,2.3rem) 'Space Grotesk',Arial,sans-serif;line-height:1.15}.evidence-video figcaption span:last-child{color:#aeb5c0;font-size:1.05rem;line-height:1.6;max-width:460px}
+@media(max-width:760px){.evidence-video{grid-template-columns:1fr;justify-items:center}.evidence-video video{max-width:360px}.evidence-video figcaption{text-align:center;align-items:center}}
+@media(max-width:520px){.evidence-video{margin-bottom:14px;padding:16px}}
