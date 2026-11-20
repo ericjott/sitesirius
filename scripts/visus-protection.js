@@ -2,10 +2,11 @@
   'use strict';
 
   const blockedShortcuts = new Set(['a', 'c', 'p', 's', 'u', 'x']);
-  const block = (event) => event.preventDefault();
+  const isField = (target) => target instanceof Element && target.closest('input, textarea, select, [contenteditable="true"]');
+  const block = (event) => { if (!isField(event.target)) event.preventDefault(); };
   const watermark = document.querySelector('.screen-watermark');
   const sessionCode = Math.random().toString(36).slice(2, 8).toUpperCase();
-  const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
+  const dateFormatter = new Intl.DateTimeFormat(document.documentElement.lang || 'pt-BR', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
@@ -33,7 +34,7 @@
   document.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase();
 
-    if ((event.ctrlKey || event.metaKey) && blockedShortcuts.has(key)) {
+    if ((event.ctrlKey || event.metaKey) && blockedShortcuts.has(key) && !isField(event.target)) {
       event.preventDefault();
     }
   }, { capture: true });

@@ -1,0 +1,30 @@
+/* Lead form + WhatsApp button for service pages (simulation, AI) */
+.service-contact{align-items:start;display:grid;gap:clamp(2.5rem,6vw,6rem);grid-template-columns:minmax(0,1fr) minmax(0,30rem)}
+.service-contact .service-contact-copy>p{color:rgba(255,255,255,.58);font-size:1.1rem;line-height:1.6;max-width:42rem}
+.service-contact .service-contact-copy ul{color:rgba(255,255,255,.72);display:grid;gap:.7rem;list-style:none;margin:2rem 0 0;padding:0}
+.service-contact .service-contact-copy li:before{color:var(--lead-accent,#ffb400);content:'→ '}
+.lead-form{background:#f4f6fa;color:#11151c;display:grid;gap:1rem;padding:2rem}
+.lead-form label{display:grid;font-family:inherit;font-size:.78rem;font-weight:700;line-height:1.3;gap:.45rem;letter-spacing:.03em}
+.lead-form label>span{color:#7b8797;font-weight:400}
+.lead-form input:not([type=checkbox]),.lead-form textarea,.lead-form select{background:#fff;border:1px solid #c9d2df;border-radius:0;color:#11151c;font-family:inherit;font-size:1rem;line-height:1.4;padding:.85rem .9rem;width:100%}
+.lead-form textarea{resize:vertical}
+.lead-form input:focus,.lead-form textarea:focus,.lead-form select:focus{border-color:#1553c9;outline:3px solid #1553c933}
+.lead-form button{background:var(--lead-accent,#ffb400);border:0;color:#111;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700;padding:1rem 1.25rem;text-align:left;transition:.2s ease}
+.lead-form button:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.lead-form button:disabled{cursor:wait;opacity:.65;transform:none}
+.lead-form .consent-check{align-items:start;display:grid;gap:.6rem;grid-template-columns:18px 1fr}
+.lead-form .consent-check input{margin-top:3px}
+.lead-form .consent-check span{color:#596579;font-size:.75rem;font-weight:400;letter-spacing:0;line-height:1.4}
+.lead-form .form-note{color:#697587;font-size:.72rem;line-height:1.4}
+.lead-form .form-note a{color:#1553c9}
+.lead-form .honeypot{display:none!important}
+.form-status{font-size:.85rem;line-height:1.45;margin:0}
+.form-status:empty{display:none}
+.form-status a{color:#c9223b;font-weight:700}
+.form-success{background:#dff5e7;border-left:4px solid #1c9b55;color:#155d35;padding:.8rem .9rem}
+.form-error{background:#fde7ea;border-left:4px solid #ef304a;color:#8d1b2d;padding:.8rem .9rem}
+.whatsapp-float{align-items:center;background:#25d366;border:2px solid #fff;border-radius:999px;bottom:24px;box-shadow:0 12px 30px #0006;color:#062b15;display:flex;font-family:inherit;font-size:.82rem;font-weight:700;line-height:1;gap:10px;letter-spacing:.04em;min-height:56px;padding:0 18px;position:fixed;right:24px;text-decoration:none;z-index:10000}
+.whatsapp-float:hover,.whatsapp-float:focus-visible{background:#20bd5b;transform:translateY(-2px)}
+.whatsapp-float svg{fill:currentColor;height:25px;width:25px}
+@media(max-width:860px){.service-contact{grid-template-columns:1fr}}
+@media(max-width:520px){.lead-form{padding:1.25rem}.whatsapp-float{bottom:16px;min-height:52px;padding:0 15px;right:16px}}

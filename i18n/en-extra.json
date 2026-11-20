@@ -1,0 +1,22 @@
+{
+ "wa.me/5541999904535?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20o%20Visus%20Pro%2016.5.": "wa.me/5541999904535?text=Hello!%20I%27d%20like%20to%20learn%20more%20about%20Visus%20Pro%2016.5.",
+ "wa.me/5541999904535?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20de%20intelig%C3%AAncia%20artificial.": "wa.me/5541999904535?text=Hello!%20I%27d%20like%20to%20talk%20about%20an%20artificial%20intelligence%20project.",
+ "wa.me/5541999904535?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20de%20simula%C3%A7%C3%A3o.": "wa.me/5541999904535?text=Hello!%20I%27d%20like%20to%20talk%20about%20a%20simulation%20project.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20avaliar%20os%20m%C3%B3dulos%20de%20captura%20com%20o%20Visus%20Pro%2016.5.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20evaluate%20the%20capture%20modules%20with%20Visus%20Pro%2016.5.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20confirmar%20a%20compatibilidade%20do%20meu%20equipamento%20com%20os%20m%C3%B3dulos%20e%20o%20Visus%20Pro.%20Marca%2Fmodelo%3A%20____%3B%20sinal%2Fconector%3A%20____%3B%20Windows%3A%20____.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20confirm%20my%20equipment%27s%20compatibility%20with%20the%20modules%20and%20Visus%20Pro.%20Brand%2Fmodel%3A%20____%3B%20signal%2Fconnector%3A%20____%3B%20Windows%3A%20____.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20confirmar%20compatibilidade%20com%20o%20Visus.%20Vou%20enviar%20a%20marca%2Fmodelo%20do%20equipamento%2C%20foto%20dos%20conectores%2C%20tipo%20de%20sinal%20e%20vers%C3%A3o%20do%20Windows.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20confirm%20compatibility%20with%20Visus.%20I%27ll%20send%20the%20equipment%20brand%2Fmodel%2C%20a%20photo%20of%20the%20connectors%2C%20the%20signal%20type%20and%20my%20Windows%20version.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20saber%20qual%20m%C3%B3dulo%20de%20captura%20%C3%A9%20compat%C3%ADvel%20com%20meu%20equipamento%20e%20o%20Visus.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20know%20which%20capture%20module%20is%20compatible%20with%20my%20equipment%20and%20Visus.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20verificar%20o%20conversor%20C8205%20com%20minha%20fonte%20CVBS%20e%20o%20Visus%20Pro%2016.5.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20check%20the%20C8205%20converter%20with%20my%20CVBS%20source%20and%20Visus%20Pro%2016.5.",
+ "wa.me/5541999904535?text=Ol%C3%A1%2C%20quero%20verificar%20o%20m%C3%B3dulo%20WFM01%20com%20minha%20c%C3%A2mera%20e%20o%20Visus%20Pro%2016.5.": "wa.me/5541999904535?text=Hello%2C%20I%27d%20like%20to%20check%20the%20WFM01%20module%20with%20my%20camera%20and%20Visus%20Pro%2016.5.",
+ "subject=Engenharia%20e%20Integracao%20de%20UAVs%20-%20Avaliacao%20tecnica": "subject=UAV%20Engineering%20and%20Integration%20-%20Technical%20assessment",
+ "subject=Montagem%20e%20Integracao%20de%20Drones%20e%20UAVs": "subject=Drone%20and%20UAV%20Assembly%20and%20Integration",
+ "subject=Projeto%20de%20P%26D%20e%20desenvolvimento%20de%20prot%C3%B3tipo": "subject=R%26D%20project%20and%20prototype%20development",
+ "subject=Projetos%20de%20P%26D": "subject=R%26D%20projects",
+ "placeholder=\"(00) 00000-0000\"": "placeholder=\"+1 000 000 0000\"",
+ "placeholder=\"+55 (00) 00000-0000\"": "placeholder=\"+1 000 000 0000\"",
+ "'Enviando…'": "'Sending…'",
+ "'Não foi possível concluir o envio. Escreva diretamente para <a href=\"mailto:eric@siriusdynamics.com.br\">eric@siriusdynamics.com.br</a>.'": "'We could not send your message right now. Please write to <a href=\"mailto:eric@siriusdynamics.com.br\">eric@siriusdynamics.com.br</a>.'",
+ "'Não foi possível enviar agora.'": "'Could not send right now.'",
+ "'Recebemos seus dados. A Sirius Dynamics entrará em contato em breve.'": "'Thank you. Sirius Dynamics will get back to you shortly.'",
+ "'Recebemos seus dados. A Sirius Dynamics entrará em contato para apresentar o Visus Pro 16.5.'": "'Thank you. Sirius Dynamics will contact you to present Visus Pro 16.5.'"
+}
